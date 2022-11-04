@@ -13,6 +13,7 @@ function partlist(arr) {
   return arr2
 }
 
+// Example 
 let arr = partlist(["I", "wish", "I", "hadn't", "come"])
 console.log(arr);
 /*PREP
