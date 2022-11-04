@@ -1,0 +1,31 @@
+function partlist(arr) {
+    let arr2 =[]
+    let temp = [] 
+    for(let i=0, x =-arr.length + 1; i<arr.length -1; i++){
+      temp.push(arr.slice(0,i+1).join(" "))
+      if(x != 0){
+        temp.push(arr.slice(x).join(" "))
+        x++
+      }
+      arr2.push(temp)
+      temp = []
+    }
+  return arr2
+}
+
+let arr = partlist(["I", "wish", "I", "hadn't", "come"])
+console.log(arr);
+/*PREP
+Parameters: 'arr' = an array of at least 2 elements. No edge cases
+Return: An array containing all the different ways the elements in 'arr'
+        can be split into 2 parts
+Example: ['I', 'play', 'sports'] => [['I', 'play sports'], ['I play', 'sports']]
+Pseudocode: Create 2 arrays. 'arr2' will contain all the possible groupings of 'arr' 
+            'temp' will contain 'arr' split into 2 parts. A for loop will group the first 
+             element in 'arr' push it to 'temp' and then group together the rest of the 
+             elements in 'arr' and push that grouping to 'temp'. 
+             'temp' now contains one possible way 'arr' can be split into 2 parts
+             Now push 'temp' into 'arr2'. Empty 'temp'. Repeat this process
+             but each time add one more element to the first element in 'temp'
+             return arr2
+             */
