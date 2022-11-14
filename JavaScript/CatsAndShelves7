@@ -1,0 +1,19 @@
+function solution(start, finish) 
+{
+  return Math.floor((finish - start) / 3) + (finish - start) % 3
+}
+
+/*PREP
+Parameters: 'start' a positive integer denoting where the shelf where the cat begins 
+            'finish' a positive integer denoting where the shelf the cat will end on
+Return: the minimum number of jumps the cat needs to make to reach 'finish' from 'start' position
+Examples: (1,5) => 2, (1,4) => 1
+Pseudocode: evaluate (finish - start) to get the total number of shelves the cat needs to climb
+            The cat can climb 3 steps at one time. So divide the total steps by 3. This amount 
+            is the amount of steps the cat can climb in increments of 3.
+            Get the remainder of the total steps divided by 3. This is the amount of 
+            steps the cat climbs by one. 
+            Add these two values and return the sum*/
+
+// Example 
+console.log(solution(1,5))
