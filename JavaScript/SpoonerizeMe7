@@ -1,0 +1,17 @@
+function spoonerize(words) {
+    let arr = words.split(" ")
+    return `${arr[1][0]}${ arr[0].slice(1)} ${arr[0][0]}${arr[1].slice(1)}`
+}
+// Example
+console.log(spoonerize("nit picking")); 
+/*
+Parameters: 'word' = a string of two words separated by a space
+Return: the string 'word' but with the first letters from each word in the string swapped
+Examples: ("nit pick") => "pit nick", ("cat taco") => "tat caco"
+Pseudocode: split the string in 2 words
+            repeat the next 3 steps for both words
+            get first letter from the other word 
+            get a copy of the current word but remove the first letter 
+            combine the first letter and the remaining word
+            return the 2 new words separated by a space
+*/
