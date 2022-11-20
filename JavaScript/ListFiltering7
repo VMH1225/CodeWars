@@ -1,0 +1,15 @@
+function filter_list(l) {
+  return l.filter(e => Number.isInteger(e))
+}
+
+console.log(filter_list([1,2,3,4,"3","hello",5]))
+/*PREP
+Parameters: 'l' = an array consisting of numbers and strings
+Return: an array conisiting of only the numbers from 'l' and no string values
+Example: ([1,2,'3', 'b', 5]) => [1,2,5]
+Pseudocode: create a new empty array
+            go through every element in 'l'
+            check if an elment is a number
+            if it is a number add that element to the new array
+            return the new array
+*/
