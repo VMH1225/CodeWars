@@ -1,0 +1,26 @@
+function swap (string) {
+  let arr = string.split("")
+  
+  arr = arr.map(e=>{
+    if(e == 'a' || e == 'e' || e == 'i' || e == 'o' || e == 'u'){
+      return e.toUpperCase()
+    }
+   return e
+  })
+
+  return arr.join("")
+  
+}
+
+console.log(swap("HellO everyone"))
+/*PREP
+Parameters: 'string' = a string of characters it can be an empty string
+Return: 'string' with all the vowels capitalized
+Examples: ("hello") = "hEllO", ("whatEver") => "whAtEvEr"
+Pseudocode: add each character in the string to an array
+            go through the array. 
+            return all non-vowel characters to the array
+            if a character is a lowercase vowel capitalize it then return it
+            join all the characters in the array
+            return the string 
+ */
