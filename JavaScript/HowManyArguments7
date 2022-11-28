@@ -1,0 +1,13 @@
+function args_count(n){
+  return arguments.length
+}
+
+console.log(args_count(1,2,3)) // 3
+console.log(args_count([1,2,3])) // 1
+console.log(args_count()) // 0
+// Challenge:
+/*
+return the number of arguments passed into the function
+Ex: args_count(1,2,3) => 3, args_count() => 0
+Pseudocode: The arguments.length property provides the number of arguments actually passed to a function.
+ */
