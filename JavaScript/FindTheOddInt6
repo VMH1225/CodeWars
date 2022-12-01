@@ -1,0 +1,59 @@
+
+
+function findOdd(A){
+    if(A.length == 1){
+        return A[0]
+    }
+   
+    A = A.sort((a,b)=>{
+            return a - b
+    })
+    console.log('sorted')
+    console.log(A)
+    let num 
+    let count
+    for(let i = 0; i < A.length; i++){
+        num = A[i]
+        count = 1
+        for(let x = i + 1; x < A.length; x++){
+            if(num == A[x]){
+                count++
+            }
+            else{
+                i += x - 1
+                break
+            }
+        }
+        console.log(`current num is ${num} with a count of ${count}`)
+        if(count % 2 != 0){
+            return num
+        }
+    }
+}
+
+// may work if you put the if statement that checks if count is odd on the outside loop
+
+// this doesn't work. walk through this example array. element by element. line by line in the function
+// somehow when the last number is the odd one  the function doesnt work
+[1, 1, 2, 2, 2, 2, 4]
+
+let arr = [1,2,2,4,2,2,1]
+
+console.log(findOdd(arr))
+
+
+/*PREP
+Parameters: 'A' = an array of integers
+Return: The integer in the array tha appears an odd number of times in the array. 
+        only one integer will appear an odd number of times.
+Examples: ([1,2,2,3,3,3,4,3,3,3,2,2,1]) => 4, ([0,1,0,1,0]) => 0, ([0]) => 0
+Pseudocode: sort the array
+            set count to 1
+            compare the first element to the next element.
+            if they equal add 1 to count
+            compare the next element 
+            if they do not equal check if count is odd
+            if it is odd return the current num
+
+
+*/
