@@ -1,0 +1,40 @@
+/* Given n, take the sum of the digits of n. If that value 
+   has more than one digit, continue reducing in this way 
+   until a single-digit number is produced. The input will be 
+   a non-negative integer.
+*/
+
+function digitalRoot(n) {
+ let sum 
+ //convert 'n' to string so that we can store each digit in an array
+ n = n.toString()
+  
+  do{    
+    // add each digit in the array using the reduce method. Since the elments were converted to strings
+    // we use the unary plus operator to convert them to numbers when adding.
+      sum = Array.from(n).reduce((acc, e) =>{
+      return acc + +e  
+      },0)
+    // set 'n' equal to sum for the next iteration of the loop
+      n = sum.toString()
+      // if sum is a single digit number the loop stops
+  }while(sum >= 10)
+    
+    return sum
+}
+
+digitalRoot(19)
+
+
+/*PREP
+Parameters: 'n' = non-negative integer
+Return: add the digit in n and then add the digits of the sum. Return the sum when it is a single digit.
+Example: (19) -> (1 + 9) = 10 -> (1 + 0) => 9 return 9
+Pseudocode: convert 'n' to string 
+            create while loop 
+            sum the each number 'n' and add it to sum in loop.
+            assign 'n' the value of 'sum'
+            check if sum is a digit. 
+            if not repeat the loop
+            if it is a digit return the number
+*/
